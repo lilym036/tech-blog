@@ -5,7 +5,19 @@ class Comment extends Model {}
 
 Comment.init(
 {
+    name: {
 
+    },
+    comm_text: {
+
+    },
+    blogpost_id: {
+        type: DataTypes.INTEGER,
+        references: {
+          model: 'blogpost',
+          key: 'id',
+        },
+    },
 },
 {
     sequelize,

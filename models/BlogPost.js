@@ -5,7 +5,21 @@ class BlogPost extends Model { }
 
 BlogPost.init(
 {
+    id: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        primaryKey: true,
+        autoIncrement: true,
+      },
+    author_name: {
 
+    },
+    title:{
+
+    },
+    text: {
+
+    },
 },
 {
     sequelize,
@@ -15,17 +29,6 @@ BlogPost.init(
     modelName: 'blogpost',   
 }
 );
-
-
-
-
-
-
-
-
-
-
-
 
 
 

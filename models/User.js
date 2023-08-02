@@ -20,7 +20,7 @@ class User extends Model {
         primaryKey: true,
         autoIncrement: true,
       },
-      name: {
+      username: {
         type: DataTypes.STRING,
         allowNull: false,
       },
@@ -42,12 +42,15 @@ class User extends Model {
     },
     {
       hooks: {
+        // Use the beforeCreate hook to work with data before a new instance is created
         beforeCreate: async (newUserData) => {
           newUserData.password = await bcrypt.hash(newUserData.password, 10);
           return newUserData;
         },
         beforeUpdate: async (updatedUserData) => {
+          if (updatedUserData.password) {
           updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
+          }
           return updatedUserData;
         },
       },
