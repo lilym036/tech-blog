@@ -11,15 +11,25 @@ BlogPost.init(
         primaryKey: true,
         autoIncrement: true,
       },
-    author_name: {
-
-    },
+    user_id: {
+        type: DataTypes.INTEGER,
+        references: {
+          model: 'user',
+          key: 'id',
+        },
+      },
     title:{
-
+        type: DataTypes.STRING,
+        allowNull: false,
     },
-    text: {
-
+    content: {
+        type: DataTypes.STRING,
     },
+    date_created: {
+        type: DataTypes.DATE,
+        allowNull: false,
+        defaultValue: DataTypes.NOW,
+      },
 },
 {
     sequelize,
