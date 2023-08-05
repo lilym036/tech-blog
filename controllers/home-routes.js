@@ -3,7 +3,7 @@ const { User, BlogPost, Comment } = require('../models');
 
 router.get('/', async (req, res) => {
   try {
-    const blogData = await Blog.findAll({
+    const blogData = await BlogPost.findAll({
       include: [
         {
           model: User,

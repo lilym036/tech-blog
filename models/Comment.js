@@ -11,13 +11,13 @@ Comment.init(
         primaryKey: true,
         autoIncrement: true,
       },
-    // user_id: {
-    //   type: DataTypes.INTEGER,
-    //   references: {
-    //     model: 'user',
-    //     key: 'id',
-    //   },
-    // },
+    user_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'user',
+        key: 'id',
+      },
+    },
     comm_text: {
         type: DataTypes.STRING,
     },
